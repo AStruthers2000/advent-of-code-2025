@@ -22,17 +22,15 @@ add_executable(utils-tests)
 target_sources(utils-tests
     PRIVATE
         test/main.cpp
-        test/tests/math/math_utils_simple_tests.cpp
+        test/tests/aoc_parse_tests.cpp
 )
 
 # Import the same modules used by the main program
 target_sources(utils-tests
     PUBLIC
         FILE_SET utils TYPE CXX_MODULES FILES
-        math/math_utils.cppm
-        math/math_utils.simple.cppm
-        math/math_utils.combinatorics.cppm
-        math/math_utils.linear_algebra.cppm
+        parse/aoc.parse.cppm
+        parse/aoc.parse.impl.cppm
 )
 
 # Link CppUTest
