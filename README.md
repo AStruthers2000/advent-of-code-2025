@@ -1,5 +1,5 @@
 
-# Advent of Code 2025 - C++23 Implementation
+# Advent of Code 2025
 
 Welcome to my [**Advent of Code 2025**](https://adventofcode.com/2025) repository! This project showcases my solutions to the daily programming challenges presented in Advent of Code 2025. Each solution is written in **C++23**, adhering to modern object-oriented programming practices and leveraging the latest language features.
 
@@ -18,20 +18,15 @@ Welcome to my [**Advent of Code 2025**](https://adventofcode.com/2025) repositor
 | [10](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day10) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/10) |
 | [11](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day11) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/11) |
 | [12](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day12) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/12) |
-| [13](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day13) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/13) |
-| [14](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day14) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/14) |
-| [15](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day15) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/15) |
-| [16](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day16) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/16) |
-| [17](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day17) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/17) |
-| [18](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day18) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/18) |
-| [19](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day19) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/19) |
-| [20](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day20) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/20) |
-| [21](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day21) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/21) |
-| [22](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day22) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/22) |
-| [23](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day23) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/23) |
-| [24](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day24) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/24) |
-| [25](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day25) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/25) |
 
+# TODO
+* Fix README
+* Get source tests working
+* Create module tests
+
+Ignore everything below this
+
+<del>
 
 ## 🚀 Project Overview
 
@@ -111,6 +106,5 @@ This project aims to:
 - Embrace and explore modern C++23 features and development methodologies.
 - Serve as a learning resource and reference for modular programming in C++.
 
+</del>
 ---
-
-Feel free to explore, learn, and share your feedback!
