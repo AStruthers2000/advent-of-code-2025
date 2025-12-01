@@ -6,6 +6,7 @@
 module;
 
 #include <algorithm>
+#include <cstdint>
 #include <functional>
 #include <set>
 #include <string_view>
