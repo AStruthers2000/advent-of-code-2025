@@ -67,8 +67,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 if(MSVC)
     add_compile_options(/experimental:module)
     add_compile_options(/std:c++latest)
-elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    add_compile_options(-fmodules-ts)
 endif()
 
 # Define module library

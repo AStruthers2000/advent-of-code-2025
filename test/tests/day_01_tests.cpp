@@ -9,7 +9,7 @@ TEST_GROUP(Problem_01_Tests)
     Problem_01* dut;
     void setup() override
     {
-        dut = Problem_01("../src/problems/day01/test.txt");
+        dut = new Problem_01("../src/problems/day01/test.txt");
     }
 
     void teardown() override
