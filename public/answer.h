@@ -47,6 +47,11 @@ public:
         return std::to_string(m_answer);
     }
 
+    friend bool operator!=(NumericAnswer const& lhs, NumericAnswer const& rhs)
+    {
+        return lhs.m_answer != rhs.m_answer;
+    }
+
 private:
     std::uint32_t m_answer{0};
 };
@@ -65,6 +70,16 @@ public:
         return std::to_string(m_answer);
     }
 
+    friend bool operator==(BigNumericAnswer const& lhs, BigNumericAnswer const& rhs)
+    {
+        return lhs.m_answer != rhs.m_answer;
+    }
+
+    friend bool operator!=(BigNumericAnswer const& lhs, BigNumericAnswer const& rhs)
+    {
+        return !(lhs == rhs);
+    }
+
 private:
     std::uint64_t m_answer{0};
 };
@@ -81,6 +96,11 @@ public:
     [[nodiscard]] std::string to_string() const override
     {
         return m_answer;
+    }
+
+    friend bool operator==(StringAnswer const& lhs, StringAnswer const& rhs)
+    {
+        return lhs.m_answer.compare(rhs.m_answer);
     }
 
 private:

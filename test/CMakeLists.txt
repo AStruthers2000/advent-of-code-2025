@@ -30,6 +30,9 @@ target_sources(advent-of-code-tests
 
         # source
         ${CMAKE_SOURCE_DIR}/src/problems/day01/problem_01.cpp
+
+        # support
+        ${CMAKE_CURRENT_SOURCE_DIR}/support/string_from.cpp
 )
 
 # Link CppUTest and aoc_modules (from utils/)

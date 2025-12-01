@@ -30,7 +30,7 @@ public:
      * @brief Constructor that passes and automatically loads file data
      * @param [in] input_data_path Path to this problem's data file
      */
-    explicit Problem_01(std::string_view input_data_path) : Problem(input_data_path, true)
+    explicit Problem_01(std::string_view input_data_path) : Problem(input_data_path)
     {}
 
     /**
