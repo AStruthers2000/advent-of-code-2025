@@ -1,7 +1,8 @@
-// ///////////////////////////////////////////////////////////////////////////////////////////////
-// / Copyright (c) 2025.
-// ///////////////////////////////////////////////////////////////////////////////////////////////
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Copyright (C) 2025 AStruthers2000 - All Rights Reserved
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Parsing utilities
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module;
 
 #include <fstream>
@@ -10,13 +11,17 @@ module;
 #include <string_view>
 #include <vector>
 
+//----------------------------------------------------------------------------------------------------------------------
 export module aoc.parse;
 
+//----------------------------------------------------------------------------------------------------------------------
 inline std::vector<std::string_view> split_sv(std::string_view str, std::string_view delim, bool keep_empty);
 
+//----------------------------------------------------------------------------------------------------------------------
 export namespace AoC::Parse
 {
 
+//----------------------------------------------------------------------------------------------------------------------
 auto read_lines_from_file(std::string_view path) -> std::vector<std::string>
 {
     std::ifstream in(std::string{path});
@@ -34,16 +39,19 @@ auto read_lines_from_file(std::string_view path) -> std::vector<std::string>
     return lines;
 }
 
+//----------------------------------------------------------------------------------------------------------------------
 auto split_line_by_token(std::string_view str, std::string_view token) -> std::vector<std::string_view>
 {
     return split_sv(str, token, false);
 }
 
+//----------------------------------------------------------------------------------------------------------------------
 auto split_lines(std::string_view input) -> std::vector<std::string_view>
 {
     return split_sv(input, "\n", true);
 }
 
+//----------------------------------------------------------------------------------------------------------------------
 template <typename T, typename = typename std::enable_if_t<std::is_integral_v<T>>>
 auto sv_to_int(std::string_view sv) -> std::optional<T>
 {
@@ -59,11 +67,9 @@ auto sv_to_int(std::string_view sv) -> std::optional<T>
     return value;
 }
 
-//    template <typename T = char>
-//    auto parse_grid(std::span<std::string_view const> lines) -> AoC::Types::Grid<T>;
-
 } // namespace AoC::Parse
 
+//----------------------------------------------------------------------------------------------------------------------
 inline std::vector<std::string_view> split_sv(std::string_view str, std::string_view delim, bool keep_empty)
 {
     std::vector<std::string_view> out;
@@ -80,7 +86,7 @@ inline std::vector<std::string_view> split_sv(std::string_view str, std::string_
         auto take_end = (next == std::string_view::npos) ? str.size() : next;
         auto token = std::string_view{str.data() + pos, take_end - pos};
 
-// if token is not empty, or if we want to keep emptys anyway, add token to output
+        // if token is not empty, or if we want to keep emptys anyway, add token to output
         if (!token.empty() || keep_empty) out.push_back(token);
         if (next == std::string_view::npos) break;
 

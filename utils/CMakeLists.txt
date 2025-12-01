@@ -76,6 +76,7 @@ add_library(aoc_modules)
 target_sources(aoc_modules
     PUBLIC
         FILE_SET CXX_MODULES FILES
+            aoc.grid.ixx
             aoc.math.ixx
             aoc.parse.ixx
 )

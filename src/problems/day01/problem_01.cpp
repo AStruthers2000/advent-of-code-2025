@@ -3,7 +3,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "Problem_01.h"
 
-#include <algorithm>
+/* Specific includes/imports go here */
+import aoc.grid;
 
 //----------------------------------------------------------------------------------------------------------------------
 namespace AoC
@@ -12,36 +13,40 @@ namespace AoC
 //----------------------------------------------------------------------------------------------------------------------
 bool Problem_01::load_problem()
 {
-    std::uint64_t sum = 0;
-    for (std::size_t i = 0; i < get_lines().size(); ++i)
-    {
-        std::string_view line = get_lines()[i];
-        if (line.empty())
-        {
-            m_sums.push_back(sum);
-            sum = 0;
-        }
-        else
-        {
-            auto val = AoC::Parse::sv_to_int<std::uint32_t>(line);
-            sum += static_cast<std::uint64_t>(val.value_or(0));
-        }
-    }
-
-    std::ranges::sort(m_sums, std::ranges::greater());
-    return true;
+    return false;
 }
 
 //----------------------------------------------------------------------------------------------------------------------
 std::unique_ptr<Answer> Problem_01::solve_part_1()
 {
-    return std::make_unique<BigNumericAnswer>(m_sums[0]);
+    enum class Height : std::uint8_t
+    {
+        SHORT = 0,
+        ONE,
+        TWO,
+        THREE,
+        FOUR,
+        FIVE,
+        SIX,
+        SEVEN,
+        EIGHT,
+        NINE,
+        INVALID
+    };
+//    Grid::Grid2D<std::string> grid(10, 20, "Hello");
+//    Grid::Grid2D<Thing> grid(get_lines());
+    Grid::Grid2D<Height> grid(get_lines(), [](char element)
+    {
+        return static_cast<Height>(element - '0');
+    });
+    auto neighbors = grid.get_neighbors(Grid::GridPosition{1, 1}, true);
+    return nullptr;
 }
 
 //----------------------------------------------------------------------------------------------------------------------
 std::unique_ptr<Answer> Problem_01::solve_part_2()
 {
-    return std::make_unique<BigNumericAnswer>(m_sums[0] + m_sums[1] + m_sums[2]);
+    return nullptr;
 }
 
 } // namespace AoC

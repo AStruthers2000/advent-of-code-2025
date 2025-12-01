@@ -37,14 +37,28 @@ public:
      * @param [in] filepath Path to the given input file. Paths can be relative, but they'll be relative to the exe
      *                      location, not the current project structure
      */
-    explicit Problem(std::string_view filepath)
+    Problem(std::string_view filepath, bool strip_empty = false)
     {
         auto lines = AoC::Parse::read_lines_from_file(filepath);
         if (lines.empty())
         {
             std::printf("Reading input file: %s resulted in empty vector of lines.\n", std::string(filepath).c_str());
         }
-        m_lines = lines;
+
+        if (strip_empty)
+        {
+            for (auto const& line : lines)
+            {
+                if (!line.empty())
+                {
+                    m_lines.push_back(line);
+                }
+            }
+        }
+        else
+        {
+            m_lines = lines;
+        }
     }
     virtual ~Problem() = default;
 
