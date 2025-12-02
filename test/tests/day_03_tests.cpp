@@ -4,16 +4,16 @@
 #include <CppUTest/TestHarness.h>
 
 #include "../support/answer_comparator.h"
-#include "../../src/problems/day{{ day }}/problem_{{ day }}.h"
+#include "../../src/problems/day03/problem_03.h"
 
 using namespace AoC;
 
-TEST_GROUP(Problem{{ day }}Tests)
+TEST_GROUP(Problem03Tests)
 {
-    Problem{{ day }}* dut;
+    Problem03* dut;
     void setup() override
     {
-        dut = new Problem{{ day }}("../../src/problems/day{{ day }}/test.txt");
+        dut = new Problem03("../../src/problems/day03/test.txt");
         dut->load_problem();
     }
 
@@ -23,7 +23,7 @@ TEST_GROUP(Problem{{ day }}Tests)
     }
 };
 
-TEST(Problem{{ day }}Tests, Part1TestData)
+TEST(Problem03Tests, Part1TestData)
 {
     auto result = dut->solve_part_1();
     auto expected = std::make_unique</*Problem type goes here*/>(/*Part 1 test answer goes here*/);
@@ -31,7 +31,7 @@ TEST(Problem{{ day }}Tests, Part1TestData)
     COMPARE_ANSWER(expected.get(), result.get());
 }
 
-TEST(Problem{{ day }}Tests, Part2TestData)
+TEST(Problem03Tests, Part2TestData)
 {
     auto result = dut->solve_part_2();
     auto expected = std::make_unique</*Problem type goes here*/>(/*Part 2 test answer goes here*/);

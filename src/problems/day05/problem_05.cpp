@@ -10,19 +10,19 @@ namespace AoC
 {
 
 //----------------------------------------------------------------------------------------------------------------------
-bool Problem_05::load_problem()
+bool Problem05::load_problem()
 {
     return false;
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-std::unique_ptr<Answer> Problem_05::solve_part_1()
+std::unique_ptr<Answer> Problem05::solve_part_1()
 {
     return nullptr;
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-std::unique_ptr<Answer> Problem_05::solve_part_2()
+std::unique_ptr<Answer> Problem05::solve_part_2()
 {
     return nullptr;
 }

@@ -23,7 +23,7 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Problem 01 concrete implementation
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-class Problem_01 : public Problem
+class Problem01 : public Problem
 {
 enum class Direction
 {
@@ -38,7 +38,7 @@ public:
      * @brief Constructor that passes and automatically loads file data
      * @param [in] input_data_path Path to this problem's data file
      */
-    explicit Problem_01(std::string_view input_data_path) : Problem(input_data_path, true)
+    explicit Problem01(std::string_view input_data_path) : Problem(input_data_path, true)
     {}
 
     /**

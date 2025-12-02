@@ -29,18 +29,18 @@ namespace AoC
 //----------------------------------------------------------------------------------------------------------------------
 Solver::Solver()
 {
-    m_problems[0] = std::make_unique<Problem_01>("../src/problems/day01/input.txt");
-    m_problems[1] = std::make_unique<Problem_02>("../src/problems/day02/input.txt");
-    m_problems[2] = std::make_unique<Problem_03>("../src/problems/day03/input.txt");
-    m_problems[3] = std::make_unique<Problem_04>("../src/problems/day04/input.txt");
-    m_problems[4] = std::make_unique<Problem_05>("../src/problems/day05/input.txt");
-    m_problems[5] = std::make_unique<Problem_06>("../src/problems/day06/input.txt");
-    m_problems[6] = std::make_unique<Problem_07>("../src/problems/day07/input.txt");
-    m_problems[7] = std::make_unique<Problem_08>("../src/problems/day08/input.txt");
-    m_problems[8] = std::make_unique<Problem_09>("../src/problems/day09/input.txt");
-    m_problems[9] = std::make_unique<Problem_10>("../src/problems/day10/input.txt");
-    m_problems[10] = std::make_unique<Problem_11>("../src/problems/day11/input.txt");
-    m_problems[11] = std::make_unique<Problem_12>("../src/problems/day12/input.txt");
+    m_problems[0] = std::make_unique<Problem01>("../src/problems/day01/input.txt");
+    m_problems[1] = std::make_unique<Problem02>("../src/problems/day02/input.txt");
+    m_problems[2] = std::make_unique<Problem03>("../src/problems/day03/input.txt");
+    m_problems[3] = std::make_unique<Problem04>("../src/problems/day04/input.txt");
+    m_problems[4] = std::make_unique<Problem05>("../src/problems/day05/input.txt");
+    m_problems[5] = std::make_unique<Problem06>("../src/problems/day06/input.txt");
+    m_problems[6] = std::make_unique<Problem07>("../src/problems/day07/input.txt");
+    m_problems[7] = std::make_unique<Problem08>("../src/problems/day08/input.txt");
+    m_problems[8] = std::make_unique<Problem09>("../src/problems/day09/input.txt");
+    m_problems[9] = std::make_unique<Problem10>("../src/problems/day10/input.txt");
+    m_problems[10] = std::make_unique<Problem11>("../src/problems/day11/input.txt");
+    m_problems[11] = std::make_unique<Problem12>("../src/problems/day12/input.txt");
 }
 
 //----------------------------------------------------------------------------------------------------------------------

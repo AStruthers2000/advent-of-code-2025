@@ -28,6 +28,7 @@ class Answer
 {
 public:
     [[nodiscard]] virtual std::string to_string() const = 0;
+    virtual ~Answer() = default;
 
 protected:
     Answer() = default;

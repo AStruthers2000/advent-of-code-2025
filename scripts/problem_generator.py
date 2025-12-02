@@ -15,6 +15,7 @@ from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 ROOT_DIR = Path(Path.cwd().parent.resolve())
 PROBLEM_DIR = Path(ROOT_DIR, "src/problems")
+TEST_DIR = Path(ROOT_DIR, "test/tests")
 NUM_DAYS = 12
 
 
@@ -44,6 +45,7 @@ def main() -> None:
         source_path = Path(day_dir, f"problem_{day_str}.cpp")
         input_path = Path(day_dir, "input.txt")
         test_path = Path(day_dir, "test.txt")
+        test_file_path = Path(TEST_DIR, f"day_{day_str}_tests.cpp")
 
         # Prepare Jinja
         env = Environment(
@@ -55,6 +57,7 @@ def main() -> None:
         )
         header_template = env.get_template("problem.h.j2")
         source_template = env.get_template("problem.cpp.j2")
+        test_template = env.get_template("test.cpp.j2")
 
         # Create directory
         day_dir.mkdir(parents=True, exist_ok=True)
@@ -78,6 +81,12 @@ def main() -> None:
             day=day_str,
         )
         write_file(source_path, source_code)
+
+        # Render test
+        test_code = test_template.render(
+            day=day_str,
+        )
+        write_file(test_file_path, test_code)
 
         # Ensure input.txt exists (don’t overwrite)
         if not input_path.exists():

@@ -32,7 +32,7 @@ target_sources(advent-of-code-tests
         ${CMAKE_SOURCE_DIR}/src/problems/day01/problem_01.cpp
 
         # support
-        ${CMAKE_CURRENT_SOURCE_DIR}/support/string_from.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/support/answer_comparator.cpp
 )
 
 # Link CppUTest and aoc_modules (from utils/)

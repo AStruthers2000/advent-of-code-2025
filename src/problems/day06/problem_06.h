@@ -23,14 +23,14 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Problem 06 concrete implementation
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-class Problem_06 : public Problem
+class Problem06 : public Problem
 {
 public:
     /**
      * @brief Constructor that passes and automatically loads file data
      * @param [in] input_data_path Path to this problem's data file
      */
-    explicit Problem_06(std::string_view input_data_path) : Problem(input_data_path)
+    explicit Problem06(std::string_view input_data_path) : Problem(input_data_path)
     {}
 
     /**

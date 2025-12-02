@@ -11,7 +11,7 @@ namespace AoC
 {
 
 //----------------------------------------------------------------------------------------------------------------------
-bool Problem_01::load_problem()
+bool Problem01::load_problem()
 {
     for (auto const& line : get_lines())
     {
@@ -31,7 +31,7 @@ bool Problem_01::load_problem()
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-std::unique_ptr<Answer> Problem_01::solve_part_1()
+std::unique_ptr<Answer> Problem01::solve_part_1()
 {
     int current{ 50 };
     int zero_count{ 0 };
@@ -53,7 +53,7 @@ std::unique_ptr<Answer> Problem_01::solve_part_1()
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-std::unique_ptr<Answer> Problem_01::solve_part_2()
+std::unique_ptr<Answer> Problem01::solve_part_2()
 {
     int current{ 50 };
     int zero_count{ 0 };
