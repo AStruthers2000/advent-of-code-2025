@@ -25,12 +25,20 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Problem_01 : public Problem
 {
+enum class Direction
+{
+    Left,
+    Right
+};
+
+using Turn = std::pair<Direction, int>;
+
 public:
     /**
      * @brief Constructor that passes and automatically loads file data
      * @param [in] input_data_path Path to this problem's data file
      */
-    explicit Problem_01(std::string_view input_data_path) : Problem(input_data_path)
+    explicit Problem_01(std::string_view input_data_path) : Problem(input_data_path, true)
     {}
 
     /**
@@ -52,7 +60,7 @@ public:
     std::unique_ptr<Answer> solve_part_2() override;
 
 private:
-    /* Specific implementation details go here */
+    std::vector<Turn> m_turns;
 };
 
 } // namespace AoC

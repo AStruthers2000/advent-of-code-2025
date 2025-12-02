@@ -2,7 +2,8 @@
 
 SimpleString StringFrom(AoC::NumericAnswer const& inst)
 {
-    return SimpleString(inst.to_string().c_str());
+    std::string str = inst.to_string();
+    return SimpleString(str.c_str());
 }
 
 SimpleString StringFrom(AoC::BigNumericAnswer const& inst)
