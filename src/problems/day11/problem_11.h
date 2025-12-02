@@ -41,13 +41,13 @@ public:
 
     /**
      * @brief Solves part 1 of day 11
-     * @return Returns an Answer, or std::nullopt if no answer is computed yet
+     * @return Returns an Answer, or nullptr if no answer is computed yet
      */
     std::unique_ptr<Answer> solve_part_1() override;
 
     /**
      * @brief Solves part 2 of day 11
-     * @return Returns an Answer, or std::nullopt if no answer is computed yet
+     * @return Returns an Answer, or nullptr if no answer is computed yet
      */
     std::unique_ptr<Answer> solve_part_2() override;
 
