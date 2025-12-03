@@ -67,4 +67,14 @@ int clamp_with_wrap(T value, T lower, T upper, T& out_value)
     return wrap_count;
 }
 
+//----------------------------------------------------------------------------------------------------------------------
+template <typename T, typename = typename std::enable_if_t <std::is_arithmetic_v<T>>>
+auto round_up_to_nearest_multiple(T value, T multiple) -> T
+{
+    T remainder = value % multiple;
+    T difference = multiple - remainder;
+
+    return T{ value + difference };
+}
+
 } // namespace AoC::Math

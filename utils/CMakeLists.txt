@@ -18,4 +18,6 @@ target_sources(aoc_modules
             aoc.grid.ixx
             aoc.math.ixx
             aoc.parse.ixx
+            aoc.regex.ixx
+            aoc.string.ixx
 )

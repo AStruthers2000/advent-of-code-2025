@@ -11,6 +11,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "problem.h"
 
+#include <array>
 #include <optional>
 
 
@@ -25,6 +26,13 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Problem02 : public Problem
 {
+
+struct Range
+{
+    std::string low;
+    std::string high;
+};
+
 public:
     /**
      * @brief Constructor that passes and automatically loads file data
@@ -52,7 +60,7 @@ public:
     std::unique_ptr<Answer> solve_part_2() override;
 
 private:
-    /* Specific implementation details go here */
+    std::vector<Range> m_ids;
 };
 
 } // namespace AoC
