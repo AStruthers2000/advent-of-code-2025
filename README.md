@@ -4,20 +4,20 @@
 Welcome to my [**Advent of Code 2025**](https://adventofcode.com/2025) repository! This project showcases my solutions to the daily programming challenges presented in Advent of Code 2025. Each solution is written in **C++23**, adhering to modern object-oriented programming practices and leveraging the latest language features.
 
 ## ⭐ Stats
-|                                           Day                                            | Stars | Parse  | Part 1 | Part 2 |                       Problem                       |
-|:----------------------------------------------------------------------------------------:|:------|:------:|:------:|:------:|:---------------------------------------------------:|
-| [1](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day01)  | ⭐⭐    | 989μs  |  59μs  |  61μs  | [Open on AoC](https://adventofcode.com/2025/day/1)  |
-| [2](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day02)  |       |        |        |        | [Open on AoC](https://adventofcode.com/2025/day/2)  |
-| [3](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day03)  |       |        |        |        | [Open on AoC](https://adventofcode.com/2025/day/3)  |
-| [4](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day04)  |       |        |        |        | [Open on AoC](https://adventofcode.com/2025/day/4)  |
-| [5](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day05)  |       |        |        |        | [Open on AoC](https://adventofcode.com/2025/day/5)  |
-| [6](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day06)  |       |        |        |        | [Open on AoC](https://adventofcode.com/2025/day/6)  |
-| [7](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day07)  |       |        |        |        | [Open on AoC](https://adventofcode.com/2025/day/7)  |
-| [8](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day08)  |       |        |        |        | [Open on AoC](https://adventofcode.com/2025/day/8)  |
-| [9](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day09)  |       |        |        |        | [Open on AoC](https://adventofcode.com/2025/day/9)  |
-| [10](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day10) |       |        |        |        | [Open on AoC](https://adventofcode.com/2025/day/10) |
-| [11](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day11) |       |        |        |        | [Open on AoC](https://adventofcode.com/2025/day/11) |
-| [12](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day12) |       |        |        |        | [Open on AoC](https://adventofcode.com/2025/day/12) |
+|                                           Day                                            | Stars | Parse | Part 1 | Part 2 |                       Problem                       |
+|:----------------------------------------------------------------------------------------:|:------|:-----:|:------:|:------:|:---------------------------------------------------:|
+| [1](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day01)  | ⭐⭐    | 989μs |  59μs  |  61μs  | [Open on AoC](https://adventofcode.com/2025/day/1)  |
+| [2](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day02)  | ⭐⭐    |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/2)  |
+| [3](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day03)  | ⭐⭐    | 394μs | 253μs  | 409μs  | [Open on AoC](https://adventofcode.com/2025/day/3)  |
+| [4](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day04)  |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/4)  |
+| [5](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day05)  |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/5)  |
+| [6](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day06)  |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/6)  |
+| [7](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day07)  |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/7)  |
+| [8](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day08)  |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/8)  |
+| [9](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day09)  |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/9)  |
+| [10](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day10) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/10) |
+| [11](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day11) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/11) |
+| [12](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day12) |       |       |        |        | [Open on AoC](https://adventofcode.com/2025/day/12) |
 
 # TODO
 * Fix README

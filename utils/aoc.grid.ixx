@@ -165,6 +165,21 @@ public:
         return neighbors;
     }
 
+    std::optional<std::vector<GridType>> get_row(std::size_t row_num) const
+    {
+        if (row_num < m_grid.size())
+        {
+            return m_grid[row_num];
+        }
+
+        return std::nullopt;
+    }
+
+    [[nodiscard]] std::size_t get_row_count() const
+    {
+        return m_grid.size();
+    }
+
 private:
     /**
      *

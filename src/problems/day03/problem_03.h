@@ -13,6 +13,7 @@
 
 #include <optional>
 
+import aoc.grid;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Namespace
@@ -25,12 +26,13 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Problem03 : public Problem
 {
+
 public:
     /**
      * @brief Constructor that passes and automatically loads file data
      * @param [in] input_data_path Path to this problem's data file
      */
-    explicit Problem03(std::string_view input_data_path) : Problem(input_data_path)
+    explicit Problem03(std::string_view input_data_path) : Problem(input_data_path, true)
     {}
 
     /**
@@ -52,7 +54,10 @@ public:
     std::unique_ptr<Answer> solve_part_2() override;
 
 private:
-    /* Specific implementation details go here */
+    Grid::Grid2D<std::uint8_t> m_banks;
+
+    std::uint64_t find_max_sequence(std::vector<std::uint8_t> const& row, std::size_t sequence_size) const;
+    std::pair<std::uint8_t, std::size_t> find_next_greedy(std::vector<std::uint8_t> const& row, std::size_t start_pos, std::size_t max_end) const;
 };
 
 } // namespace AoC

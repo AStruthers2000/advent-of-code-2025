@@ -28,7 +28,7 @@ target_sources(advent-of-code-tests
         # tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/day_01_tests.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/day_02_tests.cpp
-#        ${CMAKE_CURRENT_SOURCE_DIR}/tests/day_03_tests.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/tests/day_03_tests.cpp
 #        ${CMAKE_CURRENT_SOURCE_DIR}/tests/day_04_tests.cpp
 #        ${CMAKE_CURRENT_SOURCE_DIR}/tests/day_05_tests.cpp
 #        ${CMAKE_CURRENT_SOURCE_DIR}/tests/day_06_tests.cpp
