@@ -4,6 +4,7 @@
 #include "problem_02.h"
 
 #include <algorithm>
+#include <execution>
 
 import aoc.string;
 
@@ -42,11 +43,16 @@ std::unique_ptr<Answer> Problem02::solve_part_1()
         {
             std::string current_string = std::to_string(current);
 
-            auto val = AoC::String::split_string_into_even_parts(current_string, 2);
-            if (val.has_value() && AoC::String::are_strings_equal(val.value()))
+            std::string_view first{current_string.begin(), current_string.begin() + current_string.size() / 2};
+            std::string full{};
+            full += first;
+            full += first;
+
+            if (current_string.compare(full) == 0)
             {
                 sum += current;
             }
+
             current++;
         }
     });
@@ -64,16 +70,23 @@ std::unique_ptr<Answer> Problem02::solve_part_2()
         std::uint64_t start = AoC::Parse::sv_to_int<std::uint64_t>(range.low).value();
         std::uint64_t end = AoC::Parse::sv_to_int<std::uint64_t>(range.high).value();
 
-        std::uint64_t current{ start };
+        std::uint64_t current{start};
 
         while (current <= end)
         {
             std::string current_string = std::to_string(current);
 
-            for (int i = 2; i <= current_string.length(); ++i)
+            for (int i = 1; i <= current_string.length() / 2; ++i)
             {
-                auto val = AoC::String::split_string_into_even_parts(current_string, i);
-                if (val.has_value() && AoC::String::are_strings_equal(val.value()))
+                std::string_view first = current_string.substr(0, i);
+
+                std::string full{};
+                for (int j = 0; j < current_string.length() / i; ++j)
+                {
+                    full += first;
+                }
+
+                if (current_string.compare(full) == 0)
                 {
                     sum += current;
                     break;
@@ -83,6 +96,7 @@ std::unique_ptr<Answer> Problem02::solve_part_2()
             current++;
         }
     });
+
 
     return std::make_unique<BigNumericAnswer>(sum);
 }
