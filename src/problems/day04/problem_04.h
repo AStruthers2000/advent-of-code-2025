@@ -11,8 +11,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "problem.h"
 
-#include <optional>
-
+import aoc.grid;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Namespace
@@ -25,12 +24,19 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Problem04 : public Problem
 {
+enum Tile
+{
+    NoPaper,
+    Paper,
+    Removed,
+};
+
 public:
     /**
      * @brief Constructor that passes and automatically loads file data
      * @param [in] input_data_path Path to this problem's data file
      */
-    explicit Problem04(std::string_view input_data_path) : Problem(input_data_path)
+    explicit Problem04(std::string_view input_data_path) : Problem(input_data_path, true)
     {}
 
     /**
@@ -52,7 +58,9 @@ public:
     std::unique_ptr<Answer> solve_part_2() override;
 
 private:
-    /* Specific implementation details go here */
+    Grid::Grid2D<Tile> m_grid;
+
+    Grid::Grid2D<Tile> remove_papers(Grid::Grid2D<Tile> const& current);
 };
 
 } // namespace AoC

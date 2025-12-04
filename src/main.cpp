@@ -8,6 +8,6 @@
 int main()
 {
     AoC::Solver& solver{ AoC::Solver::instance() };
-    solver.solve_problem(AoC::Day::DAY_03);
+    solver.solve_problem(AoC::Day::DAY_04);
     return 0;
 }
