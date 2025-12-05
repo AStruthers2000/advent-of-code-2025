@@ -78,12 +78,13 @@ std::unique_ptr<Answer> Problem02::solve_part_2()
 
             for (int i = 1; i <= current_string.length() / 2; ++i)
             {
-                std::string_view first = current_string.substr(0, i);
+                std::string first = current_string.substr(0, i);
 
                 std::string full{};
+                full.reserve(current_string.length() / i);
                 for (int j = 0; j < current_string.length() / i; ++j)
                 {
-                    full += first;
+                    full.append(first);
                 }
 
                 if (current_string.compare(full) == 0)

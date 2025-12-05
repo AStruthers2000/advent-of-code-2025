@@ -118,6 +118,21 @@ public:
         }
     }
 
+    void for_each_element(std::function<void(GridType&, GridPosition)> process_element)
+    {
+        for (std::size_t row = 0; row < m_grid.size(); ++row)
+        {
+            for (std::size_t col = 0; col < m_grid[row].size(); ++col)
+            {
+                process_element(m_grid[row][col], GridPosition{static_cast<int>(row), static_cast<int>(col)});
+            }
+        }
+    }
+
+    void for_each_element(std::function<void(GridType const&, GridPosition)> process_element) const
+    {
+        for_each_element(process_element);
+    }
     /**
      *
      * @param position
@@ -165,70 +180,6 @@ public:
         return neighbors;
     }
 
-    std::optional<GridType> get_element(GridPosition position) const
-    {
-        auto [row, col] = position;
-
-        std::optional<GridType> element = std::nullopt;
-        if (row >= 0 && row < m_grid.size())
-        {
-            if (col >= 0 && col < m_grid[row].size())
-            {
-                element = m_grid[row][col];
-            }
-        }
-
-        return element;
-    }
-
-    bool set_element(GridPosition position, GridType element)
-    {
-        auto [row, col] = position;
-
-        if (row >= 0 && row < m_grid.size())
-        {
-            if (col >= 0 && col < m_grid[row].size())
-            {
-                m_grid[row][col] = element;
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    bool set_elements(GridType before, GridType after)
-    {
-        for (auto& row : m_grid)
-        {
-            for (auto& other : row)
-            {
-                if (before == other)
-                {
-                    other = after;
-                }
-            }
-        }
-        return true;
-    }
-
-    std::uint64_t count_occurrence(GridType element) const
-    {
-        std::uint64_t occurrences{ 0 };
-        for (auto const& row : m_grid)
-        {
-            for (auto const& other : row)
-            {
-                if (element == other)
-                {
-                    ++occurrences;
-                }
-            }
-        }
-
-        return occurrences;
-    }
-
     std::optional<std::vector<GridType>> get_row(std::size_t row_num) const
     {
         if (row_num < m_grid.size())
@@ -245,12 +196,21 @@ public:
     }
 
 private:
-    /**
-     *
-     * @param position
-     * @return
-     */
+    std::optional<GridType> get_element(GridPosition position) const
+    {
+        auto [row, col] = position;
 
+        std::optional<GridType> element = std::nullopt;
+        if (row >= 0 && row < m_grid.size())
+        {
+            if (col >= 0 && col < m_grid[row].size())
+            {
+                element = m_grid[row][col];
+            }
+        }
+
+        return element;
+    }
 
     /// @brief
     std::vector<std::vector<GridType>> m_grid{};

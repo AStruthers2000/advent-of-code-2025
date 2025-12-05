@@ -20,8 +20,8 @@ bool Problem04::load_problem()
 //----------------------------------------------------------------------------------------------------------------------
 std::unique_ptr<Answer> Problem04::solve_part_1()
 {
-    auto after = remove_papers(m_grid);
-    std::uint64_t count = after.count_occurrence(Tile::Removed);
+    auto current = m_grid;
+    std::uint64_t count = remove_papers(current);
 
     return std::make_unique<BigNumericAnswer>(count);
 }
@@ -36,10 +36,7 @@ std::unique_ptr<Answer> Problem04::solve_part_2()
 
     do
     {
-        auto after = remove_papers(current);
-        removed_this_time = after.count_occurrence(Tile::Removed);
-        after.set_elements(Tile::Removed, Tile::NoPaper);
-        current = after;
+        removed_this_time = remove_papers(current);
         papers_removed += removed_this_time;
     }while(removed_this_time != 0);
 
@@ -47,38 +44,35 @@ std::unique_ptr<Answer> Problem04::solve_part_2()
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-Grid::Grid2D<Problem04::Tile> Problem04::remove_papers(const Grid::Grid2D <Tile> &current)
+std::uint64_t Problem04::remove_papers(Grid::Grid2D <Tile>& current)
 {
     Grid::Grid2D<Tile> temp = current;
 
-    for (std::size_t row_idx = 0; row_idx < current.get_row_count(); ++row_idx)
-    {
-        auto row = current.get_row(row_idx).value();
-        for (std::size_t col_idx = 0; col_idx < row.size(); ++col_idx)
+    std::uint64_t new_papers_removed{0};
+
+    temp.for_each_element([&](Tile &element, AoC::Grid::GridPosition position) {
+        if (element == Tile::Paper)
         {
-            auto position = AoC::Grid::GridPosition{static_cast<int>(row_idx), static_cast<int>(col_idx)};
-            auto tile = current.get_element(position).value();
-            if (tile == Tile::Paper)
+            auto neighbors = current.get_neighbors(position, true);
+            std::size_t paper_count{0};
+            for (auto const &neighbor: neighbors)
             {
-                auto neighbors = current.get_neighbors(position, true);
-                std::size_t paper_count{0};
-                for (auto const &neighbor: neighbors)
+                auto [other, pos, dir] = neighbor;
+                if (other == Tile::Paper)
                 {
-                    auto [other, pos, dir] = neighbor;
-                    if (other == Tile::Paper)
-                    {
-                        ++paper_count;
-                    }
-                }
-                if (paper_count < 4)
-                {
-                    temp.set_element(position, Tile::Removed);
+                    ++paper_count;
                 }
             }
+            if (paper_count < 4)
+            {
+                element = Tile::Removed;
+                ++new_papers_removed;
+            }
         }
-    }
+    });
 
-    return std::move(temp);
+    current = temp;
+    return new_papers_removed;
 }
 
 } // namespace AoC

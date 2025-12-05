@@ -56,6 +56,7 @@ void Solver::solve_all_problems()
     for(std::size_t i = 0; i < m_problems.size(); ++i)
     {
         solve_problem(static_cast<Day>(i));
+        std::println("\n||----------------------------------------------------------------------||\n");
     }
 }
 

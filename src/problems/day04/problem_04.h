@@ -60,7 +60,7 @@ public:
 private:
     Grid::Grid2D<Tile> m_grid;
 
-    Grid::Grid2D<Tile> remove_papers(Grid::Grid2D<Tile> const& current);
+    std::uint64_t remove_papers(Grid::Grid2D<Tile>& current);
 };
 
 } // namespace AoC
