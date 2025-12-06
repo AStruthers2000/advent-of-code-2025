@@ -81,10 +81,11 @@ std::unique_ptr<Answer> Problem02::solve_part_2()
                 std::string first = current_string.substr(0, i);
 
                 std::string full{};
-                full.reserve(current_string.length() / i);
+                full.reserve(current_string.length());
                 for (int j = 0; j < current_string.length() / i; ++j)
                 {
-                    full.append(first);
+                    auto start = full.begin() + (j * first.length());
+                    std::copy(first.begin(), first.end(), start);
                 }
 
                 if (current_string.compare(full) == 0)

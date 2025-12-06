@@ -23,6 +23,12 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Problem05 : public Problem
 {
+struct Range
+{
+    std::uint64_t low;
+    std::uint64_t high;
+};
+
 public:
     /**
      * @brief Constructor that passes and automatically loads file data
@@ -50,7 +56,11 @@ public:
     std::unique_ptr<Answer> solve_part_2() override;
 
 private:
-    /* Specific implementation details go here */
+    std::vector<Range> m_ranges;
+    std::vector<std::uint64_t> m_ids;
+
+    std::optional<Range> merge_ranges_if_overlap(Range const& r1, Range const& r2);
+    std::vector<Range> merge_all_ranges(std::vector<Range> all_ranges);
 };
 
 } // namespace AoC
