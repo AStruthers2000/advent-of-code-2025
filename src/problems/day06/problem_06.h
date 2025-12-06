@@ -11,6 +11,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "problem.h"
 
+import aoc.grid;
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Namespace
@@ -28,7 +30,7 @@ public:
      * @brief Constructor that passes and automatically loads file data
      * @param [in] input_data_path Path to this problem's data file
      */
-    explicit Problem06(std::string_view input_data_path) : Problem(input_data_path)
+    explicit Problem06(std::string_view input_data_path) : Problem(input_data_path, true)
     {}
 
     /**
@@ -50,7 +52,7 @@ public:
     std::unique_ptr<Answer> solve_part_2() override;
 
 private:
-    /* Specific implementation details go here */
+    Grid::Grid2D<int> m_grid;
 };
 
 } // namespace AoC

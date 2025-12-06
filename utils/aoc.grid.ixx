@@ -118,6 +118,11 @@ public:
         }
     }
 
+    explicit Grid2D(std::vector<std::vector<GridType>> const& defaults)
+    {
+        m_grid = std::move(defaults);
+    }
+
     void for_each_element(std::function<void(GridType&, GridPosition)> process_element)
     {
         for (std::size_t row = 0; row < m_grid.size(); ++row)
@@ -190,9 +195,30 @@ public:
         return std::nullopt;
     }
 
+    std::optional<std::vector<GridType>> get_col(std::size_t col_num)
+    {
+        if (col_num < m_grid[0].size())
+        {
+            std::vector<GridType> column{};
+            for (auto const& row : m_grid)
+            {
+                column.push_back(row[col_num]);
+            }
+
+            return column;
+        }
+
+        return std::nullopt;
+    }
+
     [[nodiscard]] std::size_t get_row_count() const
     {
         return m_grid.size();
+    }
+
+    [[nodiscard]] std::size_t get_col_count() const
+    {
+        return m_grid[0].size();
     }
 
 private:
