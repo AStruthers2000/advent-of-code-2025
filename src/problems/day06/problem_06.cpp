@@ -11,6 +11,15 @@ import aoc.parse;
 namespace AoC
 {
 
+/* TODO
+ * 1. Make it so that load_problem() parses the lines into a Grid2D<char> with no extra handling
+ * 2. Make a function that returns an std::multimap<Operation, std::vector<int>> get_horizontal_values()
+ *    and a duplicate function for get_vertical_values()
+ * 3. Part 1 should call get_horizontal_values(), then call a function std::uint64_t calculate_sum() that takes the
+ *    multimap
+ * 4. Part 2 should call get_vertical_values() then call the same function
+ */
+
 //----------------------------------------------------------------------------------------------------------------------
 bool Problem06::load_problem()
 {
