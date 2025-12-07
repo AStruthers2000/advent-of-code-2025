@@ -11,6 +11,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "problem.h"
 
+import aoc.grid;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Namespace
@@ -23,12 +24,21 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Problem07 : public Problem
 {
+
+enum class GridSpace
+{
+    Empty,
+    Start,
+    Splitter,
+    TachyonBeam
+};
+
 public:
     /**
      * @brief Constructor that passes and automatically loads file data
      * @param [in] input_data_path Path to this problem's data file
      */
-    explicit Problem07(std::string_view input_data_path) : Problem(input_data_path)
+    explicit Problem07(std::string_view input_data_path) : Problem(input_data_path, true)
     {}
 
     /**
@@ -50,7 +60,10 @@ public:
     std::unique_ptr<Answer> solve_part_2() override;
 
 private:
-    /* Specific implementation details go here */
+    Grid::Grid2D<GridSpace> m_grid;
+    Grid::Grid2D<std::uint64_t> m_beam_counts;
+
+    std::uint64_t update_grid_one_step(Grid::Grid2D<GridSpace> &current, int row_to_update, bool update_beam_counts = false);
 };
 
 } // namespace AoC

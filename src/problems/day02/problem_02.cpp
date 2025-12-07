@@ -84,8 +84,7 @@ std::unique_ptr<Answer> Problem02::solve_part_2()
                 full.reserve(current_string.length());
                 for (int j = 0; j < current_string.length() / i; ++j)
                 {
-                    auto start = full.begin() + (j * first.length());
-                    std::copy(first.begin(), first.end(), start);
+                    full += first;
                 }
 
                 if (current_string.compare(full) == 0)

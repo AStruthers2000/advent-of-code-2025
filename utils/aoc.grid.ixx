@@ -221,7 +221,6 @@ public:
         return m_grid[0].size();
     }
 
-private:
     std::optional<GridType> get_element(GridPosition position) const
     {
         auto [row, col] = position;
@@ -237,6 +236,22 @@ private:
 
         return element;
     }
+
+    void set_element(GridType element, GridPosition position)
+    {
+        auto [row, col] = position;
+
+        if (row >= 0 && row < m_grid.size())
+        {
+            if (col >= 0 && col < m_grid[row].size())
+            {
+                m_grid[row][col] = element;
+            }
+        }
+    }
+
+private:
+
 
     /// @brief
     std::vector<std::vector<GridType>> m_grid{};
