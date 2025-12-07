@@ -33,6 +33,7 @@ TEST(Problem07Tests, Part1TestData)
 
 TEST(Problem07Tests, Part2TestData)
 {
+    dut->solve_part_1();
     auto result = dut->solve_part_2();
     auto expected = std::make_unique<BigNumericAnswer>(40);
 
