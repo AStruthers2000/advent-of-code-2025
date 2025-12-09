@@ -118,6 +118,7 @@ Problem08::connect_groups(std::vector<std::pair<Math::Point3D, int>> &connection
     int new_group_number{ 1 };
     Group last_action{};
     int elements_processed{ 0 };
+    int nodes_added{ 0 };
     for (auto const& key : std::views::keys(m_distances))
     {
         Math::Point3D left = key.first;
@@ -148,18 +149,20 @@ Problem08::connect_groups(std::vector<std::pair<Math::Point3D, int>> &connection
                         element.second = left_option.second;
                     }
                 }
-                last_action = key;
+//                last_action = key;
             }
         }
         else if (contains_left)
         {
             connections.push_back(std::make_pair(right, left_option.second));
             last_action = key;
+            ++nodes_added;
         }
         else if (contains_right)
         {
             connections.push_back(std::make_pair(left, right_option.second));
             last_action = key;
+            ++nodes_added;
         }
         else
         {
@@ -170,6 +173,15 @@ Problem08::connect_groups(std::vector<std::pair<Math::Point3D, int>> &connection
 
         elements_processed++;
         if (early_stop_on_connection.has_value() && elements_processed >= early_stop_on_connection.value())
+        {
+            break;
+        }
+        else if (!early_stop_on_connection.has_value() &&
+                 connections.size() == m_points.size() &&
+                 std::all_of(connections.begin(), connections.end(), [&connections](auto const& element)
+                 {
+                    return element.second == connections.begin()->second;
+                }))
         {
             break;
         }
