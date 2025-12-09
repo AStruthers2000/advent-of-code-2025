@@ -7,7 +7,7 @@ Welcome to my [**Advent of Code 2025**](https://adventofcode.com/2025) repositor
 |                                           Day                                            | Stars | Parse |  Part 1  |  Part 2  |                       Problem                       |
 |:----------------------------------------------------------------------------------------:|:------|:-----:|:--------:|:--------:|:---------------------------------------------------:|
 | [1](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day01)  | ⭐⭐    | 989μs |   59μs   |   61μs   | [Open on AoC](https://adventofcode.com/2025/day/1)  |
-| [2](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day02)  | ⭐⭐    | 160μ  |  1.687s  |  4.719s  | [Open on AoC](https://adventofcode.com/2025/day/2)  |
+| [2](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day02)  | ⭐⭐    | 160μs  |  1.687s  |  4.719s  | [Open on AoC](https://adventofcode.com/2025/day/2)  |
 | [3](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day03)  | ⭐⭐    | 394μs |  253μs   |  409μs   | [Open on AoC](https://adventofcode.com/2025/day/3)  |
 | [4](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day04)  | ⭐⭐    | 476μs |  146ms   |  3.001s  | [Open on AoC](https://adventofcode.com/2025/day/4)  |
 | [5](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day05)  | ⭐⭐    | 640μs |  155μs   |   84μs   | [Open on AoC](https://adventofcode.com/2025/day/5)  |
