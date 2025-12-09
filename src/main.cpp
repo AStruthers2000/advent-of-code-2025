@@ -8,7 +8,7 @@
 int main()
 {
     AoC::Solver &solver{AoC::Solver::instance()};
-    solver.solve_problem(AoC::Day::DAY_07);
+    solver.solve_problem(AoC::Day::DAY_08);
 //    solver.solve_all_problems();
     return 0;
 }

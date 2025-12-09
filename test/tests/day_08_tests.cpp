@@ -15,6 +15,7 @@ TEST_GROUP(Problem08Tests)
     {
         dut = new Problem08("../../src/problems/day08/test.txt");
         dut->load_problem();
+        dut->set_num_connections(10);
     }
 
     void teardown() override
@@ -26,7 +27,7 @@ TEST_GROUP(Problem08Tests)
 TEST(Problem08Tests, Part1TestData)
 {
     auto result = dut->solve_part_1();
-    auto expected = std::make_unique</*Problem type goes here*/>(/*Part 1 test answer goes here*/);
+    auto expected = std::make_unique<BigNumericAnswer>(40);
 
     COMPARE_ANSWER(expected.get(), result.get());
 }
@@ -34,7 +35,7 @@ TEST(Problem08Tests, Part1TestData)
 TEST(Problem08Tests, Part2TestData)
 {
     auto result = dut->solve_part_2();
-    auto expected = std::make_unique</*Problem type goes here*/>(/*Part 2 test answer goes here*/);
+    auto expected = std::make_unique<BigNumericAnswer>(25272);
 
     COMPARE_ANSWER(expected.get(), result.get());
 }

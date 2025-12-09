@@ -11,6 +11,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "problem.h"
 
+#include <map>
+import aoc.math;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Namespace
@@ -23,12 +25,13 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Problem08 : public Problem
 {
+
 public:
     /**
      * @brief Constructor that passes and automatically loads file data
      * @param [in] input_data_path Path to this problem's data file
      */
-    explicit Problem08(std::string_view input_data_path) : Problem(input_data_path)
+    explicit Problem08(std::string_view input_data_path) : Problem(input_data_path, true)
     {}
 
     /**
@@ -49,8 +52,30 @@ public:
      */
     std::unique_ptr<Answer> solve_part_2() override;
 
+    void set_num_connections(std::size_t new_connections)
+    {
+        m_num_connections = new_connections;
+    }
+
 private:
-    /* Specific implementation details go here */
+    std::vector<AoC::Math::Point3D> m_points{};
+
+    using Group = std::pair<Math::Point3D, Math::Point3D>;
+    struct GroupCmp
+    {
+        bool operator()(Group const& left, Group const& right) const
+        {
+            double left_dist = AoC::Math::euclidean_distance(left.first, left.second);
+            double right_dist = AoC::Math::euclidean_distance(right.first, right.second);
+
+            return left_dist < right_dist;
+        }
+    };
+    std::map<Group, double, GroupCmp> m_distances;
+
+    Group connect_groups(std::vector<std::pair<Math::Point3D, int>>& connections, std::optional<std::size_t> early_stop_on_connection = std::nullopt) const;
+
+    static inline std::size_t m_num_connections{ 1000 };
 };
 
 } // namespace AoC

@@ -8,7 +8,9 @@ module;
 #include <cmath>
 #include <limits>
 #include <optional>
+#include <string>
 #include <type_traits>
+#include <tuple>
 
 //----------------------------------------------------------------------------------------------------------------------
 export module aoc.math;
@@ -16,6 +18,32 @@ export module aoc.math;
 //----------------------------------------------------------------------------------------------------------------------
 export namespace AoC::Math
 {
+
+struct Point3D
+{
+    int x, y, z;
+
+    [[nodiscard]] std::string to_string() const
+    {
+        return "{" + std::to_string(x) + ", " + std::to_string(y) + ", " + std::to_string(z) + "}";
+    }
+
+    friend bool operator<(Point3D const& lhs, Point3D const& rhs)
+    {
+        auto const l = std::tie(lhs.x, lhs.y, lhs.z);
+        auto const r = std::tie(rhs.x, rhs.y, rhs.z);
+
+        return l < r;
+    }
+
+    friend bool operator==(Point3D const& lhs, Point3D const& rhs)
+    {
+        auto const l = std::tie(lhs.x, lhs.y, lhs.z);
+        auto const r = std::tie(rhs.x, rhs.y, rhs.z);
+
+        return l == r;
+    }
+};
 
 //----------------------------------------------------------------------------------------------------------------------
 template <typename T, typename = typename std::enable_if_t <std::is_arithmetic_v<T>>>
@@ -75,6 +103,11 @@ auto round_up_to_nearest_multiple(T value, T multiple) -> T
     T difference = multiple - remainder;
 
     return T{ value + difference };
+}
+
+auto euclidean_distance(Point3D a, Point3D b)-> double
+{
+    return std::sqrt(std::pow(b.x - a.x, 2) + std::pow(b.y - a.y, 2) + std::pow(b.z - a.z, 2));
 }
 
 } // namespace AoC::Math
