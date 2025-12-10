@@ -26,7 +26,7 @@ TEST_GROUP(Problem09Tests)
 TEST(Problem09Tests, Part1TestData)
 {
     auto result = dut->solve_part_1();
-    auto expected = std::make_unique<BigNumericAnswer>(0);
+    auto expected = std::make_unique<BigNumericAnswer>(50);
 
     COMPARE_ANSWER(expected.get(), result.get());
 }
@@ -34,7 +34,7 @@ TEST(Problem09Tests, Part1TestData)
 TEST(Problem09Tests, Part2TestData)
 {
     auto result = dut->solve_part_2();
-    auto expected = std::make_unique<BigNumericAnswer>(0);
+    auto expected = std::make_unique<BigNumericAnswer>(24);
 
     COMPARE_ANSWER(expected.get(), result.get());
 }

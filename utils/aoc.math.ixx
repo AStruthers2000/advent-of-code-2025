@@ -5,12 +5,16 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module;
 
+#ifndef aoc_math_ixx
+#define aoc_math_ixx
 #include <cmath>
 #include <limits>
 #include <optional>
+#include <set>
 #include <string>
 #include <type_traits>
 #include <tuple>
+#endif
 
 //----------------------------------------------------------------------------------------------------------------------
 export module aoc.math;
@@ -40,6 +44,32 @@ struct Point3D
     {
         auto const l = std::tie(lhs.x, lhs.y, lhs.z);
         auto const r = std::tie(rhs.x, rhs.y, rhs.z);
+
+        return l == r;
+    }
+};
+
+struct Point2D
+{
+    int x, y;
+
+    [[nodiscard]] std::string to_string() const
+    {
+        return "{" + std::to_string(x) + ", " + std::to_string(y) + "}";
+    }
+
+    friend bool operator<(Point2D const& lhs, Point2D const& rhs)
+    {
+        auto const l = std::tie(lhs.x, lhs.y);
+        auto const r = std::tie(rhs.x, rhs.y);
+
+        return l < r;
+    }
+
+    friend bool operator==(Point2D const& lhs, Point2D const& rhs)
+    {
+        auto const l = std::tie(lhs.x, lhs.y);
+        auto const r = std::tie(rhs.x, rhs.y);
 
         return l == r;
     }
@@ -105,9 +135,16 @@ auto round_up_to_nearest_multiple(T value, T multiple) -> T
     return T{ value + difference };
 }
 
-auto euclidean_distance(Point3D a, Point3D b)-> double
+//----------------------------------------------------------------------------------------------------------------------
+auto euclidean_distance(Point3D a, Point3D b) -> double
 {
     return std::sqrt(std::pow(b.x - a.x, 2) + std::pow(b.y - a.y, 2) + std::pow(b.z - a.z, 2));
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+auto euclidean_distance(Point2D a, Point2D b) -> double
+{
+    return std::sqrt(std::pow(b.x - a.x, 2) + std::pow(b.y - a.y, 2));
 }
 
 } // namespace AoC::Math
