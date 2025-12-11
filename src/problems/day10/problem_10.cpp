@@ -93,16 +93,16 @@ std::unique_ptr<Answer> Problem10::solve_part_2()
     std::atomic<int> completed{ 0 };
     std::atomic<std::uint64_t> min_operations{ 0 };
 
-    std::for_each(m_machines.cbegin(), m_machines.cend(), [this, &min_operations, &completed](JoltageMachine const& machine)
-    {
-        int depth = joltages_bfs_bidirectional(machine);
-
-        completed++;
-        int completed_val = completed;
-        std::printf("Calculated solution for %d out of %zd machines.\n", completed_val, m_machines.size());
-
-        min_operations += depth;
-    });
+//    std::for_each(m_machines.cbegin(), m_machines.cend(), [this, &min_operations, &completed](JoltageMachine const& machine)
+//    {
+//        int depth = joltages_bfs_bidirectional(machine);
+//
+//        completed++;
+//        int completed_val = completed;
+//        std::printf("Calculated solution for %d out of %zd machines.\n", completed_val, m_machines.size());
+//
+//        min_operations += depth;
+//    });
 
     return std::make_unique<BigNumericAnswer>(min_operations);
 }
