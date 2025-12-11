@@ -11,6 +11,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "problem.h"
 
+#include <bitset>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Namespace
@@ -23,6 +24,40 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Problem10 : public Problem
 {
+using LightPanel = std::bitset<16>;
+struct LightPanelHash
+{
+    std::size_t operator()(LightPanel const& panel) const noexcept
+    {
+        return std::hash<unsigned long>{}(panel.to_ulong());
+    }
+};
+
+using Joltages = std::vector<int>;
+struct JoltageHash {
+    size_t operator()(std::vector<int> const& vec) const {
+        size_t seed = 0;
+        for (const auto& val : vec) {
+            seed ^= std::hash<int>{}(val) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+        }
+        return seed;
+    }
+};
+
+struct Button
+{
+    LightPanel light_toggles{};
+};
+
+struct JoltageMachine
+{
+    LightPanel target_indicator_lights{};
+    LightPanel current_indicator_lights{};
+    std::vector<Button> buttons{};
+    Joltages target_joltages{};
+    Joltages current_joltages{};
+};
+
 public:
     /**
      * @brief Constructor that passes and automatically loads file data
@@ -50,7 +85,10 @@ public:
     std::unique_ptr<Answer> solve_part_2() override;
 
 private:
-    /* Specific implementation details go here */
+    std::vector<JoltageMachine> m_machines{};
+
+    int lights_bfs(JoltageMachine const& machine) const;
+    int joltages_bfs_bidirectional(JoltageMachine const& machine) const;
 };
 
 } // namespace AoC
