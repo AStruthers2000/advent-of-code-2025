@@ -89,6 +89,7 @@ private:
 
     int lights_bfs(JoltageMachine const& machine) const;
     int joltages_bfs_bidirectional(JoltageMachine const& machine) const;
+    int joltages_a_star(JoltageMachine const& machine) const;
 };
 
 } // namespace AoC

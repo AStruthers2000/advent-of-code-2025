@@ -17,6 +17,7 @@ target_sources(aoc_modules
         FILE_SET CXX_MODULES FILES
             aoc.grid.ixx
             aoc.math.ixx
+            aoc.matrix.ixx
             aoc.parse.ixx
             aoc.regex.ixx
             aoc.string.ixx
