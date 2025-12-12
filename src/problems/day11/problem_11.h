@@ -11,6 +11,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "problem.h"
 
+#include <unordered_map>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Namespace
@@ -23,12 +24,17 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Problem11 : public Problem
 {
+struct Node
+{
+    std::vector<std::string> neighbors;
+};
+
 public:
     /**
      * @brief Constructor that passes and automatically loads file data
      * @param [in] input_data_path Path to this problem's data file
      */
-    explicit Problem11(std::string_view input_data_path) : Problem(input_data_path)
+    explicit Problem11(std::string_view input_data_path) : Problem(input_data_path, true)
     {}
 
     /**
@@ -50,7 +56,11 @@ public:
     std::unique_ptr<Answer> solve_part_2() override;
 
 private:
-    /* Specific implementation details go here */
+    std::unordered_map<std::string, Node> m_nodes;
+    mutable std::unordered_map<std::string, int> m_path_cache;
+
+    int device_bfs(std::string_view start, std::string_view target) const;
+    int device_dfs(std::string_view current, std::string_view target) const;
 };
 
 } // namespace AoC

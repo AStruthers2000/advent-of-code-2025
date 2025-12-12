@@ -10,31 +10,36 @@ using namespace AoC;
 
 TEST_GROUP(Problem11Tests)
 {
-    Problem11* dut;
+    Problem11* dut_p1;
+    Problem11* dut_p2;
     void setup() override
     {
-        dut = new Problem11("../../src/problems/day11/test.txt");
-        dut->load_problem();
+        dut_p1 = new Problem11("../../src/problems/day11/test_p1.txt");
+        dut_p1->load_problem();
+
+        dut_p2 = new Problem11("../../src/problems/day11/test_p2.txt");
+        dut_p2->load_problem();
     }
 
     void teardown() override
     {
-        delete dut;
+        delete dut_p1;
+        delete dut_p2;
     }
 };
 
 TEST(Problem11Tests, Part1TestData)
 {
-    auto result = dut->solve_part_1();
-    auto expected = std::make_unique</*Problem type goes here*/>(/*Part 1 test answer goes here*/);
+    auto result = dut_p1->solve_part_1();
+    auto expected = std::make_unique<BigNumericAnswer>(5);
 
     COMPARE_ANSWER(expected.get(), result.get());
 }
 
 TEST(Problem11Tests, Part2TestData)
 {
-    auto result = dut->solve_part_2();
-    auto expected = std::make_unique</*Problem type goes here*/>(/*Part 2 test answer goes here*/);
+    auto result = dut_p2->solve_part_2();
+    auto expected = std::make_unique<BigNumericAnswer>(2);
 
     COMPARE_ANSWER(expected.get(), result.get());
 }

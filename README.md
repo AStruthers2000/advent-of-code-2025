@@ -16,7 +16,7 @@ Welcome to my [**Advent of Code 2025**](https://adventofcode.com/2025) repositor
 | [8](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day08)  | ⭐⭐    | 5.133s  | 28.68ms  | 205.8ms  | [Open on AoC](https://adventofcode.com/2025/day/8)  |
 | [9](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day09)  | ⭐     | 1.529s  |   5μs    |          | [Open on AoC](https://adventofcode.com/2025/day/9)  |
 | [10](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day10) | ⭐     | 4.155ms | 16.265ms |    ∞     | [Open on AoC](https://adventofcode.com/2025/day/10) |
-| [11](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day11) |       |         |          |          | [Open on AoC](https://adventofcode.com/2025/day/11) |
+| [11](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day11) | ⭐⭐    | 5.387ms | 1.239ms  | 4.445ms  | [Open on AoC](https://adventofcode.com/2025/day/11) |
 | [12](https://github.com/AStruthers2000/advent-of-code-2025/tree/main/src/problems/day12) |       |         |          |          | [Open on AoC](https://adventofcode.com/2025/day/12) |
 
 # TODO
