@@ -11,6 +11,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "problem.h"
 
+#include <array>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Namespace
@@ -23,6 +24,19 @@ namespace AoC
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Problem12 : public Problem
 {
+
+struct Shape
+{
+    int num_tiles_in_shape;
+};
+
+struct Box
+{
+    int width;
+    int height;
+    std::array<int, 6> shapes;
+};
+
 public:
     /**
      * @brief Constructor that passes and automatically loads file data
@@ -50,7 +64,8 @@ public:
     std::unique_ptr<Answer> solve_part_2() override;
 
 private:
-    /* Specific implementation details go here */
+    std::vector<Shape> m_shapes;
+    std::vector<Box> m_boxes;
 };
 
 } // namespace AoC

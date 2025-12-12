@@ -75,4 +75,19 @@ auto are_strings_equal(std::vector<std::string> const& strings) -> bool
     return equal;
 }
 
+//----------------------------------------------------------------------------------------------------------------------
+auto count_occurrences_of_char_in_string(std::string_view input, char c) -> int
+{
+    int occurrences{ 0 };
+    for (char const& ch : input)
+    {
+        if (ch == c)
+        {
+            occurrences++;
+        }
+    }
+
+    return occurrences;
+}
+
 } // namespace AoC::String
